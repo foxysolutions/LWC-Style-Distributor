@@ -3,7 +3,7 @@
     <aura:attribute name="styleInput" type="String[]" access="private" description="List of retrieved style inputs" />
 
     <!-- Handlers -->
-<!--    <lightning:messageChannel type="StyleUpdateChannel__c" onMessage="{!c.processStyleUpdate}" scope="APPLICATION" />-->
+	<lightning:messageChannel type="StyleUpdateChannel__c" onMessage="{!c.processStyleUpdate}" scope="APPLICATION" />
 
     <!-- Body -->
     <!-- Unfortunately, CSS Variables can't be defined in the .css file due to limitations in the Salesforce validator/compiler

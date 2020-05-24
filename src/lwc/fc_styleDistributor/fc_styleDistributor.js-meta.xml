@@ -6,9 +6,11 @@
     <targets>
         <target>lightning__AppPage</target>
         <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
     </targets>
     <targetConfigs>
-        <targetConfig targets="lightning__AppPage,lightning__HomePage">
+        <targetConfig targets="lightning__AppPage,lightning__HomePage,lightningCommunity__Default">
             <property name="publishPubSub" type="Boolean" label="Publish PubSub event" description="True when there will be listeners on same page"  default="false" />
             <property name="publishMessageChannel" type="Boolean" label="Publish MessageChannel event" description="True when there will be StyleUpdateChannel__c listeners on same page" default="false" />
             <property name="defaultAccentColor" type="String" label="Default Accent Color" description="The initial accent color"  />
