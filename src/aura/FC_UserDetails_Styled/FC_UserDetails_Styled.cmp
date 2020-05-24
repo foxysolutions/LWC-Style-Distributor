@@ -1,0 +1,18 @@
+<aura:component description="FC_UserDetails_Styled" implements="flexipage:availableForAllPageTypes">
+    <!-- Attributes -->
+    <aura:attribute name="styleInput" type="String[]" access="private" description="List of retrieved style inputs" />
+
+    <!-- Handlers -->
+    <lightning:messageChannel type="StyleUpdateChannel__c" onMessage="{!c.processStyleUpdate}" scope="APPLICATION" />
+
+    <!-- Body -->
+    <!-- Unfortunately, CSS Variables can't be defined in the .css file due to limitations in the Salesforce validator/compiler
+         Therefore, they are defined on the first DOM element, allowing cmp.getElement() to fetch and impact all child elements
+    -->
+    <div style="--accentColor: #f99732; --fontSize: 3rem;">
+        <h3 class="listTitle">Retrieved messages: </h3>
+        <aura:iteration items="{!v.styleInput}" var="styleInput" >
+            <p> Input: { accentColor: "{!styleInput.accentColor}", fontSize: "{!styleInput.fontSize}", fontUnit: "{!styleInput.fontUnit}" } </p>
+        </aura:iteration>
+    </div>
+</aura:component>

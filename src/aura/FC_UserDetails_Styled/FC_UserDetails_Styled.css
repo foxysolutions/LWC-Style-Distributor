@@ -1,0 +1,5 @@
+.THIS h3{
+    font-size:          var( --fontSize );
+    font-weight:        bold;
+    color:              var( --accentColor );
+}

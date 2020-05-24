@@ -1,0 +1,14 @@
+<!-- FC Style Distributor -->
+<template>
+    <div class="style-selector-wrapper slds-grid slds-wrap">
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-input type="color" label="Color picker" value={_styleObj.accentColor} onchange={selectColor} ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_3-of-5">
+            <lightning-slider label="Font-size" value={_styleObj.fontSize} size="large" min={_fontSizeMin} max={_fontSizeMax} step={_fontSizeStep} onchange={selectFontSize} ></lightning-slider>
+        </div>
+        <div class="slds-col slds-size_1-of-5">
+            <lightning-combobox label="Font-unit" value={_styleObj.fontUnit} options={fontUnitOptions} onchange={selectFontUnit} ></lightning-combobox>
+        </div>
+    </div>
+</template>

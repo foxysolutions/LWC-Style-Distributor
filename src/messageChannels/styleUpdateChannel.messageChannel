@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+	<masterLabel>StyleUpdateChannel</masterLabel>
+	<description>Channel to support Style Updates for LWC Style Selector to existing Aura and VF components.</description>
+	<isExposed>false</isExposed>
+	<lightningMessageFields>
+		<fieldName>styleObj</fieldName>
+		<description>JSON of Style Object</description>
+	</lightningMessageFields>
+</LightningMessageChannel>

@@ -1,0 +1,16 @@
+<!-- FC User Info -->
+<template>
+    <div class="user-details-wrapper">
+        <lightning-spinner if:false={_loadingComplete} alternative-text="Loading..." ></lightning-spinner>
+        <template if:true={_loadingComplete}>
+            <template if:true={_userFound}>
+                <p> First name: {_user.firstName} </p>
+                <p> Last name: {_user.lastName} </p>
+                <p> Email: {_user.email} </p>
+            </template>
+            <template if:false={_userFound} >
+                You are viewing this page in Guest User mode and therefore no UserInfo can be shown.
+            </template>
+        </template>
+    </div>
+</template>

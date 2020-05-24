@@ -1,0 +1,11 @@
+:host{
+    --accent-color:                 #f99732;
+    --font-size:                    12px;
+    --lwc-brandAccessible:          var( --accent-color );
+    --lwc-brandAccessibleActive:    var( --accent-color );
+}
+
+.style-selector-wrapper{
+    padding:            .5rem 1rem;
+    border:             1px solid var( --accent-color );
+}

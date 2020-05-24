@@ -1,0 +1,14 @@
+:host{
+    --accent-color:     black;
+    --font-size:      12px;
+}
+
+.user-details-wrapper{
+    display:        block;
+    width:          90%;
+    margin:         2rem auto;
+    padding:        2rem;
+    background:     var( --accent-color );
+    font-size:      var( --font-size );
+    outline:        var( --accent-color );
+}

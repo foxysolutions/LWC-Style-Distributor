@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions>
+        <componentInstances>
+            <componentInstanceProperties>
+                <name>defaultFontUnit</name>
+                <value>px</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>publishMessageChannel</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentInstanceProperties>
+                <name>publishPubSub</name>
+                <value>true</value>
+            </componentInstanceProperties>
+            <componentName>fc_styleDistributor</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>fc_userInfo</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>FC_UserDetails_Styled</componentName>
+        </componentInstances>
+        <name>main</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <masterLabel>UserInfo Style Selector</masterLabel>
+    <template>
+        <name>flexipage:defaultAppHomeTemplate</name>
+    </template>
+    <type>AppPage</type>
+</FlexiPage>
