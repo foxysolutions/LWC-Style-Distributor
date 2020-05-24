@@ -14,7 +14,7 @@
             existingList.unshift( styleObj );
             cmp.set( 'v.styleInput', existingList );
         } else{
-            console.log( 'FC_UserDetails_Styled - Retrieved Message has invalid format ', JSON.stringify( message ) );
+            console.log( 'FC_MessageChannel_Subscriber - Retrieved Message has invalid format ', JSON.stringify( message ) );
         }
     }
 });

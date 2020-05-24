@@ -20,7 +20,7 @@
             <componentName>fc_userInfo</componentName>
         </componentInstances>
         <componentInstances>
-            <componentName>FC_UserDetails_Styled</componentName>
+            <componentName>FC_MessageChannel_Subscriber</componentName>
         </componentInstances>
         <name>main</name>
         <type>Region</type>
