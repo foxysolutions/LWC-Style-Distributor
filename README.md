@@ -6,9 +6,9 @@ On style change either/both a PubSub-event and/or Lightning-Message are publishe
 The component has been developed out of personal interest and learning and can be used without any cost,
 as long as the original source is referenced.
 
-Demo: http://lab.foxy-solutions.com/style-distributor
+Demo: <a href="http://lab.foxy-solutions.com/style-distributor" target="_blank"> http://lab.foxy-solutions.com/style-distributor </a>
 
-## Techniques applied
+## Included techniques
 
 - CSS Variables (incl. Javascript get and set)
 - Pub Sub (incl. minor library extensions)
@@ -27,3 +27,18 @@ Demo: http://lab.foxy-solutions.com/style-distributor
 2) Deploy the full folder structure to your own Salesforce Org
 3) Grant your profile access to the StyleDistributor Tab (Default On)
 4) Visit the StyleDistributor Tab
+
+## Screenshots
+
+Style Distributor within Salesforce Lightning Experience - initial page load
+
+![Initial screen](screenshots/StyleDistributor-InitialLoad.png)
+
+Style Distributor within Salesforce Lightning Experience - Example changes
+[_Changed color and font-size slider range (due to font-unit change); list of retrieved messages_]
+
+![Events Example](screenshots/StyleDistributor-ExampleEvents.png)
+
+Style Distributor Input parameters
+
+![Input Configuration](screenshots/StyleDistributor-ConfigurableInput.png)
