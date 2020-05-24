@@ -4,6 +4,7 @@
  * TODO - adopt standard flexipage sibling communication mechanism when it's available.
  */
 
+const SUFFIX_ONREGISTER_EVENTNAME = '_onRegister';
 const events = {};
 
 /**
@@ -12,7 +13,7 @@ const events = {};
  * @param {object} pageRef2 - The second page reference
  */
 const samePageRef = (pageRef1, pageRef2) => {
-    if( pageRef1 && pageRef2 ){
+    if (pageRef1 && pageRef2) {
         const obj1 = pageRef1.attributes;
         const obj2 = pageRef2.attributes;
         return Object.keys(obj1)
@@ -21,7 +22,8 @@ const samePageRef = (pageRef1, pageRef2) => {
                 return obj1[key] === obj2[key];
             });
     } else{
-        return true;
+        // When one of PageRefs undefined, return true (both undefined) or false (only one undefined)
+        return pageRef1 === pageRef2;
     }
 };
 
@@ -47,11 +49,11 @@ const registerListener = (eventName, callback, thisArg) => {
     });
     if (!duplicate) {
         events[eventName].push({ callback, thisArg });
-        newListenerEvents.dispatchEvent( new CustomEvent( 'newListener', { detail: eventName } ) );
+        if (!eventName.endsWith( SUFFIX_ONREGISTER_EVENTNAME )) {
+            informPublishers(thisArg.pageRef, eventName);
+        }
     }
 };
-
-export const newListenerEvents = document.createElement( 'eventObj' );
 
 /**
  * Unregisters a callback for an event
@@ -101,9 +103,29 @@ const fireEvent = (pageRef, eventName, payload) => {
     }
 };
 
+/**
+ * Registers a callback on new listeners
+ * Allowing Publishers to respond when a listener is subscribed AFTER initiation of publisher
+ * Use case: send an initial event to any (new) listener
+ */
+const onNewListeners = (eventName, callback, thisArg) => {
+    // Execute registerListener logic for OnRegister EventName with provided callback and thisArg
+    registerListener(eventName + SUFFIX_ONREGISTER_EVENTNAME, callback, thisArg);
+}
+
+/**
+ * Internal method to inform Publishers which requested to be informed when a new Listener is registered
+ * @param {string} eventName - Name of the event the registration handler is for
+ */
+const informPublishers = (pageRef,eventName) => {
+    // Execute fireEvent logic passing Current pageRef, OnRegister EventName and the EventName as Payload
+    fireEvent(pageRef, eventName + SUFFIX_ONREGISTER_EVENTNAME, eventName);
+}
+
 export {
     registerListener,
     unregisterListener,
     unregisterAllListeners,
-    fireEvent
+    fireEvent,
+    onNewListeners
 };

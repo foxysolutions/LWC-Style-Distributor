@@ -2,7 +2,7 @@ import { LightningElement, wire, track, api } from 'lwc';
 
 // Import PubSub libraries and define Event name
 import { CurrentPageReference } from 'lightning/navigation';
-import { fireEvent, newListenerEvents } from 'c/pubsub';
+import { fireEvent, onNewListeners } from 'c/pubsub';
 export const STYLE_EVENT_NAME = 'styleChange';
 
 // Import messageService libraries and relevant Channel
@@ -72,11 +72,7 @@ export default class FC_StyleDistributor extends LightningElement {
 
             // Since listeners might complete rendering later that this component
             // Publish an 'initial welcome event' to all new Listeners
-            newListenerEvents.addEventListener( 'newListener', ( event ) => {
-                if( event.detail === STYLE_EVENT_NAME ){
-                    this.publishStyles();
-                }
-            });
+            onNewListeners( STYLE_EVENT_NAME, this.publishStyles, this );
 
             // Set rendered to TRUE after first rendering, as this method is called for each child and DOM update
             this._hasRendered = true;
