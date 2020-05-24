@@ -6,6 +6,8 @@ On style change either/both a PubSub-event and/or Lightning-Message are publishe
 The component has been developed out of personal interest and learning and can be used without any cost,
 as long as the original source is referenced.
 
+Demo: http://lab.foxy-solutions.com/style-distributor
+
 ## Techniques applied
 
 - CSS Variables (incl. Javascript get and set)
